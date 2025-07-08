@@ -29,7 +29,7 @@ function Signup() {
                 placeholder="Enter your email address"
                 required
                 autoComplete="email"
-                className="block w-full rounded-md bg-white/80 dark:bg-strokedark px-3 py-2 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                className="block w-full rounded-md bg-white/80 px-3 py-2 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
               />
               <span className="absolute right-4 top-3 text-gray-500">
                 <UserIcon size={20}/>
@@ -49,7 +49,7 @@ function Signup() {
                 placeholder="Enter your email address"
                 required
                 autoComplete="email"
-                className="block w-full rounded-md bg-white/80 dark:bg-strokedark px-3 py-2 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                className="block w-full rounded-md bg-white/80 px-3 py-2 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
               />
               <span className="absolute right-4 top-3 text-gray-500">
                 <EnvelopeSimple size={20} />
@@ -111,7 +111,7 @@ function Signup() {
               type="submit"
               className="w-full flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             >
-              Sign up
+              Create Account
             </button>
           </div>
 

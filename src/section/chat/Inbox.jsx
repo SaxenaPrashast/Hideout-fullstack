@@ -3,6 +3,7 @@ import React from 'react'
 import user01 from './../../images/user/user-01.png'
 import { DotsThreeIcon, LinkSimpleIcon, PaperPlaneTiltIcon, SmileyIcon } from '@phosphor-icons/react'
 import Dropdown from '../../components/Dropdown'
+import EmojiPicker from '../../components/EmojiPicker'
 
 function Inbox() {
     return (
@@ -91,7 +92,7 @@ function Inbox() {
                                 <LinkSimpleIcon weight='bold' size={20} />
                             </button>
                             <button className='hover:text-primary'>
-                                <SmileyIcon weight='bold' size={20} />
+                                <EmojiPicker />
                             </button>
                         </div>
                     </div>
