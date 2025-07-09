@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import user01 from './../../images/user/user-01.png'
-import { DotsThreeIcon, LinkSimpleIcon, PaperPlaneTiltIcon, SmileyIcon } from '@phosphor-icons/react'
+import { DotsThreeIcon, LinkSimpleIcon, PaperPlaneTiltIcon, PhoneCallIcon, SmileyIcon, VideoCameraIcon } from '@phosphor-icons/react'
 import Dropdown from '../../components/Dropdown'
 import EmojiPicker from '../../components/EmojiPicker'
+import UserInfo from './UserInfo'
 
 function Inbox() {
+    const [userInfoOpen, setUserInfo ] = useState(false);
+
+    const handleToggleUserInfo = ()=>{
+        setUserInfo((prev)=>!prev);
+    }
     return (
-        <div className='flex h-full flex-col border-l border-stroke dark:border-strokedark xl:w-3/4 '>
+        <>
+        <div className={`flex h-full flex-col border-l border-stroke dark:border-strokedark ${userInfoOpen ? "xl:w-1/2" : "xl:w-3/4"}`}>
             <div className='sticky flex items-center flex-row justify-between border-b border-stroke dark:border-strokedark px-6 py-4.5'>
                 <div className='flex items-center '>
                     <div className='mr-4.5 h-13 w-full max-w-13 overflow-hidden rounded-full'>
-                        <img src={user01} alt="avatar" className='h-full w-full object-cover object-center' />
+                        <img src={user01} alt="avatar" className='h-full w-full object-cover object-center cursor-pointer' onClick={handleToggleUserInfo}/>
                     </div>
 
                     <div>
@@ -21,7 +28,13 @@ function Inbox() {
                         <p className='text-sm '>Reply to message </p>
                     </div>
                 </div>
-                <div>
+                <div className='flex flex-row items-center space-x-8'>
+                    <button>
+                        <VideoCameraIcon size={24}/>
+                    </button>
+                    <button>
+                        <PhoneCallIcon size={24}/>
+                    </button>
                     <Dropdown />
                 </div>
             </div>
@@ -103,6 +116,11 @@ function Inbox() {
                 </form>
             </div>
         </div>
+
+        {userInfoOpen && (<div className='w-1/4 '>
+        <UserInfo handleToggleUserInfo={handleToggleUserInfo}/>
+        </div>)}
+        </>
     )
 }
 
