@@ -5,6 +5,7 @@ import { DotsThreeIcon, LinkSimpleIcon, PaperPlaneTiltIcon, PhoneCallIcon, Smile
 import Dropdown from '../../components/Dropdown'
 import EmojiPicker from '../../components/EmojiPicker'
 import UserInfo from './UserInfo'
+import Giphy from '../../components/Giphy'
 
 function Inbox() {
     const [userInfoOpen, setUserInfo ] = useState(false);
@@ -114,6 +115,8 @@ function Inbox() {
                         <PaperPlaneTiltIcon weight='bold' size={24} />
                     </button>
                 </form>
+
+                <Giphy />
             </div>
         </div>
 
