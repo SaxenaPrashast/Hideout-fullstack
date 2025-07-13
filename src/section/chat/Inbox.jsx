@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
 import user01 from './../../images/user/user-01.png'
-import { DotsThreeIcon, LinkSimpleIcon, PaperPlaneTiltIcon, PhoneCallIcon, SmileyIcon, VideoCameraIcon } from '@phosphor-icons/react'
+import { DotsThreeIcon, GifIcon, LinkSimpleIcon, PaperPlaneTiltIcon, PhoneCallIcon, SmileyIcon, VideoCameraIcon } from '@phosphor-icons/react'
 import Dropdown from '../../components/Dropdown'
 import EmojiPicker from '../../components/EmojiPicker'
 import UserInfo from './UserInfo'
 import Giphy from '../../components/Giphy'
+import { Gif } from '@giphy/react-components'
 
 function Inbox() {
     const [userInfoOpen, setUserInfo ] = useState(false);
@@ -104,6 +105,9 @@ function Inbox() {
                         <div className='absolute right-5 top-1/2 -translate-y-1/2 items-center justify-end space-x-4'>
                             <button className='hover:text-primary'>
                                 <LinkSimpleIcon weight='bold' size={20} />
+                            </button>
+                            <button>
+                                <GifIcon size={20}/>
                             </button>
                             <button className='hover:text-primary'>
                                 <EmojiPicker />
