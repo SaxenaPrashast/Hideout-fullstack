@@ -4,6 +4,7 @@ import Login from "./pages/auth/Login"
 import Signup from "./pages/auth/signup"
 import Verification from "./pages/auth/Verification"
 import { useEffect } from "react"
+import ErrorPage from "./pages/ErrorPage"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/signup" element={<Signup />} />
       <Route path="/auth/verify" element={<Verification />} />
+      <Route path="*" element={<ErrorPage/>}/>
     </Routes>
   )
 }
