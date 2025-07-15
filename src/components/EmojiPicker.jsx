@@ -38,7 +38,7 @@ function EmojiPicker({ onSelect }) {
             <button
                 ref={buttonref}
                 type="button"
-                className="hover:text-body text-gray-600 dark:text-gray-300"
+                className="hover:text-primary cursor-pointer text-gray-600 dark:text-gray-300"
                 onClick={handleTrigger}
             >
                 <SmileyIcon size={24} />

@@ -10,15 +10,21 @@ import { Gif } from '@giphy/react-components'
 
 function Inbox() {
     const [userInfoOpen, setUserInfo ] = useState(false);
+    const [gifOpen, setGifOpen]=useState(false);
 
+    const handleToggleGifOpen = (e)=>{
+         e.preventDefault();
+        setGifOpen((prev)=>!prev)
+    }
     const handleToggleUserInfo = ()=>{
+       
         setUserInfo((prev)=>!prev);
     }
     return (
         <>
         <div className={`flex h-full flex-col border-l border-stroke dark:border-strokedark ${userInfoOpen ? "xl:w-1/2" : "xl:w-3/4"}`}>
             <div className='sticky flex items-center flex-row justify-between border-b border-stroke dark:border-strokedark px-6 py-4.5'>
-                <div className='flex items-center '>
+                 <div className='flex items-center '>
                     <div className='mr-4.5 h-13 w-full max-w-13 overflow-hidden rounded-full'>
                         <img src={user01} alt="avatar" className='h-full w-full object-cover object-center cursor-pointer' onClick={handleToggleUserInfo}/>
                     </div>
@@ -103,13 +109,13 @@ function Inbox() {
                         <input type="text" placeholder='Type something here' className='h-12 w-full rounded-md border boreder-stroke bg-gray pl-5 pr-19 text-black placeholder-body oultine-none focus:border-primary dark:border-strokedark dark:bg-boxdark-2 dark:text-white' />
 
                         <div className='absolute right-5 top-1/2 -translate-y-1/2 items-center justify-end space-x-4'>
-                            <button className='hover:text-primary'>
+                            <button className='hover:text-primary cursor-pointer'>
                                 <LinkSimpleIcon weight='bold' size={20} />
                             </button>
-                            <button>
+                            <button className="hover:text-primary cursor-pointer" onClick={handleToggleGifOpen}>
                                 <GifIcon size={20}/>
                             </button>
-                            <button className='hover:text-primary'>
+                            <button className='hover:text-primary cursor-pointer'>
                                 <EmojiPicker />
                             </button>
                         </div>
@@ -120,7 +126,7 @@ function Inbox() {
                     </button>
                 </form>
 
-                <Giphy />
+                {gifOpen && <Giphy />}
             </div>
         </div>
 
