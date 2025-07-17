@@ -15,8 +15,10 @@ const slice = createSlice({
     initialState,
     reducers:{
         updateGifModal(state,action){
-            state.modals.gif = action.payload;
+            state.modals.gif = action.payload.value;
             state.selectedGifUrl = action.payload.url;
         }
     }
 })
+
+export default slice.reducer;   
