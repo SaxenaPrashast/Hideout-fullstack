@@ -6,7 +6,7 @@ const initialState = {
         gif:false,
 
     },
-    selectedGifUrl: "",
+    selectedGifUrl: null,
 
 }
 
@@ -22,3 +22,6 @@ const slice = createSlice({
 })
 
 export default slice.reducer;   
+export const ToggleGifModal = (value) => async (dispatch, getState) =>{
+    dispatch(slice.actions.updateGifModal(value));
+}

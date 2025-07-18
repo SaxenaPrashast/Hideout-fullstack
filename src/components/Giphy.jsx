@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Grid } from '@giphy/react-components';
 import { GiphyFetch } from "@giphy/js-fetch-api";
+import { useDispatch } from "react-redux"
 const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
 
 import _ from 'lodash'
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
+import { ToggleGifModal } from '../redux/slices/app';
 
 const gf = new GiphyFetch(apiKey)
 function Giphy() {
+  const dispatch  = useDispatch();
   const gridRef = useRef(null);
   const [isloading, setisloading] = useState(false);
   const [value, setvalue] = useState("");
@@ -53,7 +56,12 @@ function Giphy() {
     //console.log(gif);
     
     const gifUrl = gif.images.original.url;
-    console.log(gifUrl);
+    //console.log(gifUrl);
+
+    dispatch(ToggleGifModal({
+      value : true,
+      url : gifUrl
+    }))
   }
 
   return (
