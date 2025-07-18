@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 
 import user01 from './../../images/user/user-01.png'
-import { DotsThreeIcon, GifIcon, LinkSimpleIcon, PaperPlaneTiltIcon, PhoneCallIcon, SmileyIcon, VideoCameraIcon } from '@phosphor-icons/react'
+import { DotsThreeIcon, GifIcon, LinkSimpleIcon, MicrophoneIcon, PaperPlaneTiltIcon, PhoneCallIcon, SmileyIcon, VideoCameraIcon } from '@phosphor-icons/react'
 import Dropdown from '../../components/Dropdown'
 import EmojiPicker from '../../components/EmojiPicker'
 import UserInfo from './UserInfo'
 import Giphy from '../../components/Giphy'
 import { Gif } from '@giphy/react-components'
+import { useDispatch } from 'react-redux'
+import { ToggleAudioModal } from '../../redux/slices/app'
 
 function Inbox() {
+    const dispatch = useDispatch();
     const [userInfoOpen, setUserInfo ] = useState(false);
     const [gifOpen, setGifOpen]=useState(false);
 
@@ -19,6 +22,10 @@ function Inbox() {
     const handleToggleUserInfo = ()=>{
        
         setUserInfo((prev)=>!prev);
+    }
+    const handleToggleVoiceOpen = (e)=>{
+        e.preventDefault();
+        dispatch(ToggleAudioModal(true))
     }
     return (
         <>
@@ -109,6 +116,9 @@ function Inbox() {
                         <input type="text" placeholder='Type something here' className='h-12 w-full rounded-md border boreder-stroke bg-gray pl-5 pr-19 text-black placeholder-body oultine-none focus:border-primary dark:border-strokedark dark:bg-boxdark-2 dark:text-white' />
 
                         <div className='absolute right-5 top-1/2 -translate-y-1/2 items-center justify-end space-x-4'>
+                            <button onClick={handleToggleVoiceOpen} className='hover:text-primary cursor-pointer'>
+                               <MicrophoneIcon weight='bold' size={20}/>
+                            </button>
                             <button className='hover:text-primary cursor-pointer'>
                                 <LinkSimpleIcon weight='bold' size={20} />
                             </button>

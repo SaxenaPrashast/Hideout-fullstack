@@ -9,7 +9,25 @@ function GifModal() {
     const { selectedGifUrl } = useSelector((state) => state.app);
     const dispatch = useDispatch();
 
-    
+    useEffect(() => {
+        const keyHandler = ({ keyCode }) => {
+            if (!gif || keyCode !== 27) return;
+
+            dispatch(
+                ToggleGifModal({
+                    value: false,
+                    url: null,
+                })
+            );
+
+            setDropdownOpen(false);
+        };
+
+        document.addEventListener("keydown", keyHandler);
+
+        return () => document.removeEventListener("keydown", keyHandler);
+    });
+
     return (
         <div className={`fixed left-0 top-0 z-999999 flex h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5 ${gif ? "block" : "hidden"}`}>
             <div ref={modalRef} className='md:px-17.5 w-full max-w-142.5 rounded-lg bg-white dark:bg-boxdark md:py-8 px-8 py-12 '>
