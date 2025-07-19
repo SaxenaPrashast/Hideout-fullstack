@@ -8,7 +8,8 @@ import UserInfo from './UserInfo'
 import Giphy from '../../components/Giphy'
 import { Gif } from '@giphy/react-components'
 import { useDispatch } from 'react-redux'
-import { ToggleAudioModal } from '../../redux/slices/app'
+import { ToggleAudioModal, ToggleMediaModal } from '../../redux/slices/app'
+import Attachment from '../../components/Attachment'
 
 function Inbox() {
     const dispatch = useDispatch();
@@ -120,7 +121,7 @@ function Inbox() {
                                <MicrophoneIcon weight='bold' size={20}/>
                             </button>
                             <button className='hover:text-primary cursor-pointer'>
-                                <LinkSimpleIcon weight='bold' size={20} />
+                                <Attachment />
                             </button>
                             <button className="hover:text-primary cursor-pointer" onClick={handleToggleGifOpen}>
                                 <GifIcon size={20}/>

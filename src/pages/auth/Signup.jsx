@@ -5,10 +5,10 @@ import { EnvelopeSimple, Lock, UserIcon } from '@phosphor-icons/react'; // Adjus
 function Signup() {
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-      }}
+      className="min-h-screen bg-gradient-to-r from-white to-strokedark bg-center flex items-center justify-center"
+      // style={{
+      //   backgroundImage: "url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+      // }}
     >
       <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl shadow-lg p-10 max-w-sm w-full backdrop-blur-md">
         <h2 className="text-center text-2xl font-bold tracking-tight dark:text-white">
