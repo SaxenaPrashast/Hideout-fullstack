@@ -6,10 +6,12 @@ import Dropdown from '../../components/Dropdown'
 import EmojiPicker from '../../components/EmojiPicker'
 import UserInfo from './UserInfo'
 import Giphy from '../../components/Giphy'
-import { Gif } from '@giphy/react-components'
 import { useDispatch } from 'react-redux'
 import { ToggleAudioModal, ToggleMediaModal } from '../../redux/slices/app'
 import Attachment from '../../components/Attachment'
+import MsgSeprator from '../../components/MsgSeprator'
+import TypingIndicator from '../../components/TypingIndicator'
+import { TextMessage } from '../../components/Messages'
 
 function Inbox() {
     const dispatch = useDispatch();
@@ -58,13 +60,7 @@ function Inbox() {
 
             {/* List of messsages */}
             <div className='max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow'>
-                <div className='max-w-125'>
-                    <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
-                    <div className='mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2'>
-                        <p>I want to make an appointment tommorow from 2:00 PM to 5:00 PM</p>
-                    </div>
-                    <p className='text-xs'>1:55pm</p>
-                </div>
+                
 
                 <div className='max-w-125 ml-auto'>
                     {/* <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p> */}
@@ -73,6 +69,7 @@ function Inbox() {
                     </div>
                     <p className='text-xs'>1:57pm</p>
                 </div>
+                <TextMessage author="Prashast saxena" content="Hi there this is our first message https://www.youtube.com/ " read_receipt="sent" incoming={true} timestamp="2:44pm"/>
                 <div className='max-w-125'>
                     <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
                     <div className='mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2'>
@@ -80,6 +77,7 @@ function Inbox() {
                     </div>
                     <p className='text-xs'>1:55pm</p>
                 </div>
+                <MsgSeprator />
                 <div className='max-w-125 ml-auto'>
                     {/* <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p> */}
                     <div className='mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3'>
@@ -108,6 +106,7 @@ function Inbox() {
                     </div>
                     <p className='text-xs'>1:55pm</p>
                 </div>
+                <TypingIndicator /> 
 
             </div>
             {/* INput section */}
