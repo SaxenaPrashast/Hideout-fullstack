@@ -11,7 +11,7 @@ import { ToggleAudioModal, ToggleMediaModal } from '../../redux/slices/app'
 import Attachment from '../../components/Attachment'
 import MsgSeprator from '../../components/MsgSeprator'
 import TypingIndicator from '../../components/TypingIndicator'
-import { DocumentMessage, TextMessage, VoiceMessage } from '../../components/Messages'
+import { DocumentMessage, MediaMessage, TextMessage, VoiceMessage } from '../../components/Messages'
 
 function Inbox() {
     const dispatch = useDispatch();
@@ -81,6 +81,8 @@ function Inbox() {
                     <MsgSeprator />
                     <DocumentMessage author="Prashast Saxena" incoming={true} read_receipt="read" timestamp="4:23pm"/>
                     <VoiceMessage incoming={false} read_receipt="delivered" timestamp="4:27pm" />
+
+                    <MediaMessage assests={[]} author="Prashast Saxena" caption="This is a beaultiful car" incomming={true} timestamp="5:32pm" read_receipt="true" />
                     <div className='max-w-125 ml-auto'>
                         {/* <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p> */}
                         <div className='mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3'>
