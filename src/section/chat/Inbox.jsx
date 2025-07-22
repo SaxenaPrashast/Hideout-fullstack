@@ -12,12 +12,23 @@ import Attachment from '../../components/Attachment'
 import MsgSeprator from '../../components/MsgSeprator'
 import TypingIndicator from '../../components/TypingIndicator'
 import { DocumentMessage, MediaMessage, TextMessage, VoiceMessage } from '../../components/Messages'
+import VideoRoom from '../../components/VideoRoom'
+import AudioRoom from '../../components/AudioRoom'
 
 function Inbox() {
     const dispatch = useDispatch();
     const [userInfoOpen, setUserInfo] = useState(false);
     const [gifOpen, setGifOpen] = useState(false);
+    const [videocall,setVideoCall]= useState(false);
+    const [audiocall, setAudioCall] = useState(false);
 
+    const handleToggleVideo =()=>{
+        setVideoCall((p)=>!p);
+    }
+
+    const handleToggleAudio = ()=>{
+        setAudioCall((p)=>!p)
+    }
     const handleToggleGifOpen = (e) => {
         e.preventDefault();
         setGifOpen((prev) => !prev)
@@ -48,10 +59,10 @@ function Inbox() {
                         </div>
                     </div>
                     <div className='flex flex-row items-center space-x-8'>
-                        <button>
+                        <button onClick={handleToggleVideo}>
                             <VideoCameraIcon size={24} />
                         </button>
-                        <button>
+                        <button onClick={handleToggleAudio}>
                             <PhoneCallIcon size={24} />
                         </button>
                         <Dropdown />
@@ -144,7 +155,8 @@ function Inbox() {
                     {gifOpen && <Giphy />}
                 </div>
             </div>
-
+            {audiocall && <AudioRoom open={audiocall} handleClose={handleToggleAudio}/>}
+            {videocall && <VideoRoom open={videocall} handleClose ={handleToggleVideo}/>}
             {userInfoOpen && (<div className='w-1/4 '>
                 <UserInfo handleToggleUserInfo={handleToggleUserInfo} />
             </div>)}
