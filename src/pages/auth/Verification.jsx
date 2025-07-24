@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Verification() {
+  const navigate = useNavigate();
   return (
     <div className='overflow-hidden bg-gradient-to-r from-white to-strokedark px-4 dark:bg-boxdark-2 sm:px-8'>
       <div className='flex h-screen flex-col items-center justify-center overflow-hidden'>
@@ -17,6 +19,9 @@ function Verification() {
                             </div>
                              {/* Verify Button */}
                   <button
+                  onClick={()=>{
+                    navigate('/dashboard');
+                  }}
                     type="submit"
                     className="mt-6 w-full rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                   >

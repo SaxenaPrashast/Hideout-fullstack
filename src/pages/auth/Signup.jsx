@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { EnvelopeSimple, Lock, UserIcon } from '@phosphor-icons/react'; // Adjust icon set if needed
 
 function Signup() {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen bg-gradient-to-r from-white to-strokedark bg-center flex items-center justify-center"
@@ -108,6 +109,9 @@ function Signup() {
           {/* Sign Up Button */}
           <div>
             <button
+            onClick={()=>{
+              navigate('/auth/verify')
+            }}
               type="submit"
               className="w-full flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             >
@@ -117,7 +121,9 @@ function Signup() {
 
           {/* Google Sign In Button */}
           <div>
-            <button className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
+            <button onClick={()=>{
+              navigate("/dashboard")
+            }} className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
               {/* You can add a Google icon here if desired */}
               Sign up with Google
             </button>

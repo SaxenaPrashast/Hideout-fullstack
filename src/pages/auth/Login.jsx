@@ -1,8 +1,9 @@
 import { EnvelopeIcon, LockIcon } from '@phosphor-icons/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen bg-gradient-to-r from-white to-strokedark bg-center flex items-center justify-center bg-strokedark"
@@ -64,6 +65,9 @@ function Login() {
 
           <div>
             <button
+              onClick={()=>{
+                navigate("/auth/signup")
+              }}
               type="submit"
               className="w-full flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             >

@@ -19,7 +19,7 @@ function AudioRoom({ open, handleClose }) {
                     {/*Audio Feed Grid */}
                     <div className='grid grid-cols-2 gap-4 h-50 mb-4'>
                         {/* Audio feed 1 */}
-                        <div className='relative h-full w-full bg-gray rounded-md flex items-center justify-center'>
+                        <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
                             <div className='space-y-2'>
                                 <img src={User01} alt="" className='h-20 w-20 rounded-full object-center object-cover' />
                                 <div className='font-medium text-sm text-center'>You</div>
@@ -30,7 +30,7 @@ function AudioRoom({ open, handleClose }) {
                         </div>
 
                         {/* Audio feed 2 */}
-                        <div className='relative h-full w-full bg-gray rounded-md flex items-center justify-center'>
+                        <div className='relative h-full w-full bg-gray dark:bg-boxdark-2  rounded-md flex items-center justify-center'>
                             <div className='space-y-2'>
                                 <img src={User02} alt="" className='h-20 w-20 rounded-full object-center object-cover' />
                                 <div className='font-medium text-sm text-center'>Mona</div>
