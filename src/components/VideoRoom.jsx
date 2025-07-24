@@ -33,7 +33,7 @@ function VideoRoom({ open, handleClose }) {
                         </div>
 
                         {/* Video feed 2 */}
-                        <div className='relative h-full w-full bg-gray dark:bg-bodydark2 rounded-md flex items-center justify-center'>
+                        <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
                             <div className='space-y-2'>
                                 <img src={User02} alt="" className='h-20 w-20 rounded-full object-center object-cover' />
                                 <div className='font-medium text-sm text-center'>Mona</div>
