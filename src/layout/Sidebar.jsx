@@ -52,7 +52,7 @@ function Layout() {
         </div>
         <button onClick={()=>{
             navigate("/")
-        }} className='flex flex-row items-center justify-center border-2 rounded-md p-2 dark:border-strokedark hover:bg-stone-200 hover:cursor-pointer'>
+        }} className='w-full flex flex-row items-center justify-center border-2 rounded-md p-2 dark:border-strokedark hover:bg-stone-200 hover:cursor-pointer'>
           <SignOutIcon size={24} />
 
         </button>
