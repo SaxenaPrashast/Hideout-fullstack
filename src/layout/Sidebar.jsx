@@ -50,10 +50,12 @@ function Layout() {
         <div className='flex flex-row items-center justify-center'>
         <DarkModeSwitcher />
         </div>
-        <div className='flex flex-row items-center justify-center border-2 rounded-md p-2 dark:border-strokedark hover:bg-stone-200 hover:cursor-pointer'>
+        <button onClick={()=>{
+            navigate("/")
+        }} className='flex flex-row items-center justify-center border-2 rounded-md p-2 dark:border-strokedark hover:bg-stone-200 hover:cursor-pointer'>
           <SignOutIcon size={24} />
 
-        </div>
+        </button>
 
       </div>
     </div>
