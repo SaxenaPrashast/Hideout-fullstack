@@ -12,3 +12,5 @@ npm-debug.log
 build/
 dist/
 client/.parcel-cache
+mern-chat-app-prompt.md
+design.webp
