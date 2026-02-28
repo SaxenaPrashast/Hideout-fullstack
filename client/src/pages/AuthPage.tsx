@@ -25,7 +25,7 @@ export const AuthPage: React.FC = () => {
               />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-white">MERN Chat</h1>
+          <h1 className="text-2xl font-bold text-white">Hideout Chat</h1>
         </div>
 
         {/* Auth Forms */}
