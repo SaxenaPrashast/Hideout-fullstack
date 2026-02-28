@@ -47,7 +47,7 @@ export const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
       <div className="bg-gray-800 rounded-2xl shadow-xl p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
-          <p className="text-gray-400">Join MERN Chat today</p>
+          <p className="text-gray-400">Join Hideout Chat today</p>
         </div>
 
         {displayError && (
